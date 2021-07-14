@@ -18,7 +18,7 @@ echo testing color without disabling them
 echo ------------------------------------
 echo -e "\e[31mJinnu in RED"
 echo writing some plain text
-echo -e "\e[35nJinnu in MAGENTA"
+echo -e "\e[35mJinnu in MAGENTA"
 echo writing some plain text
 
 
@@ -26,5 +26,5 @@ echo testing color with disabling them
 echo ------------------------------------
 echo -e "\e[31mJinnu in RED\e[0m"
 echo writing some plain text
-echo -e "\e[35nJinnu in MAGENTA\e[0m"
+echo -e "\e[35mJinnu in MAGENTA\e[0m"
 echo writing some plain text
