@@ -25,3 +25,10 @@ echo "**********************************************"
 ## echo COURSE NAME=$(COURSE_NAME) ## this is Wrong command
 echo COURSE NAME=${COURSE_NAME}
 echo COURSE NAME=$COURSE_NAME
+
+echo "*************************************************************"
+
+echo MY NAME IS = $NAME
+echo MY NAME IS = ${NAME}
+
+echo "*************************************************************"
