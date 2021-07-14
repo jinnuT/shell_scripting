@@ -12,3 +12,9 @@ echo Number of users = $nou
 ## date with command substitution
 DATE=$(date +%F)
 echo Today, date is $DATE
+
+## date with individual format (US date format - month-day-year)
+
+DATE_US=$(date +%m-%d-%Y)
+## Note : year is always in Capital Letter
+echo "Date is in US format = "$(DATE)
