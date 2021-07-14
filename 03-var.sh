@@ -17,4 +17,4 @@ echo Today, date is $DATE
 
 DATE_US=$(date +%m-%d-%Y)
 ## Note : year is always in Capital Letter
-echo "Date is in US format = "$(DATE)
+echo "Date is in US format = "$(DATE_US)
