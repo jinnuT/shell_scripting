@@ -13,6 +13,6 @@ echo "Second argument input = "$2
 ## To access all the parsed values in the argument
 
 echo "All the argument values = "$*
-#echo "All the argument values = "$@
+echo "All the argument values = "$@
 
 echo "Total number of arguments in the input = "$#
