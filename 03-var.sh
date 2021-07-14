@@ -23,8 +23,8 @@ DATE_US=$(date +%m/%d/%Y)
 echo "Date in US format = " $DATE_US
 echo "**********************************************"
 ## echo COURSE NAME=$(COURSE_NAME) ## this is Wrong command
-echo COURSE NAME=${COURSE_NAME}
-echo COURSE NAME=$COURSE_NAME
+echo COURSE NAME = ${COURSE_NAME}
+echo COURSE NAME = $COURSE_NAME
 
 echo "*************************************************************"
 
