@@ -8,3 +8,7 @@ echo Welcome, Today date = $DATE
 ## command substitution
 nou=$(who | wc -l)
 echo Number of users = $nou
+
+## date with command substitution
+DATE=$(date +%F)
+echo Today, date is $DATE
