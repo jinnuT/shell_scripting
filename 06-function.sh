@@ -5,4 +5,9 @@
 sample(){
   echo "Hello, I'm a sample function"
 }
-sample
+
+
+for var in 1 2 3
+do
+  sample
+done
