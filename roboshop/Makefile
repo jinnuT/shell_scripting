@@ -20,4 +20,5 @@ mysql:		## installing MySQL Component
 	@echo Installing MySQL
 rabbitmq:	## installing RabbitMQ Component
 	@echo Installing RabbitMQ
+databases: mongodb redis mysql rabbitmq		## Install All Databases
 
