@@ -4,11 +4,11 @@
 
 sample(){
   echo "Hello, I'm a sample function"
-  echo first argument inside the sample function =$1
+  echo first argument inside the sample function = $1
 }
-
+sample Jithu
 ##-----Argument passing inside and outside the function------------------------------------------
-echo first argument inside the main function =$1
+echo first argument inside the main function = $1
 
 ##----Accessing variables declared inside the function and outside (main)-------------------------
 #num=6
