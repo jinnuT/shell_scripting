@@ -8,8 +8,9 @@ sample(){
   echo value of num=$num
 }
 num=6
-echo value of b=$b
 sample
+echo value of b=$b
+
 
 
 #echo b=$b
