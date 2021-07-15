@@ -11,7 +11,7 @@ shipping:
 payment:
 	@echo Installing Payment
 mongodb:
-	@echo Installing MongodDB
+	@echo Installing MongoDB
 redis:
 	@echo Installing Redis
 mysql:
