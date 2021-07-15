@@ -14,9 +14,9 @@ payment:	## installing Payment Component
 	@echo Installing Payment
 mongodb:	## installing MOngoDB Component
 	@echo Installing MongoDB
-redis:	## installing Redis Component
+redis:		## installing Redis Component
 	@echo Installing Redis
-mysql:	## installing MySQL Component
+mysql:		## installing MySQL Component
 	@echo Installing MySQL
 rabbitmq:	## installing RabbitMQ Component
 	@echo Installing RabbitMQ
