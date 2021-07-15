@@ -6,6 +6,7 @@ sample(){
   echo "Hello, I'm a sample function"
   echo first argument inside the sample function = $1
   echo Second argument inside the sample function = $2
+  b=007
 }
 sample Jithu Santa
 ##-----Argument passing inside and outside the function------------------------------------------
@@ -13,20 +14,20 @@ echo first argument inside the main function = $1
 echo second argument inside the main function = $2
 
 ##----Accessing variables declared inside the function and outside (main)-------------------------
-num=6
+num=7
 sample
-echo value of b=$b
+echo value of inside the sample function = $b
 
 ##-----LOOPS----------------------------------------------------------------------------------------
 
 echo b=$b
-num=7
+
 for var in 1 2
 do
   sample
 done
 
-echo "--------------------------------------------------------------------------------------------"
+echo "----------WHILE LOOP---------------------------------------------------------------------"
 
 while [ $num -le 10 ]
 do
