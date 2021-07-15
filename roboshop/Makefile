@@ -15,7 +15,7 @@ mongodb:
 redis:
 	@echo Installing Redis
 mysql:
-	@echo Installing MYSQL
+	@echo Installing MySQL
 rabbitmq:
 	@echo Installing RabbitMQ
 
