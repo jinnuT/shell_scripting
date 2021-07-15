@@ -24,14 +24,14 @@ echo b=$b
 
 for var in 1 2
 do
-  sample
+  sample Amma Chachan
 done
 
 echo "----------WHILE LOOP---------------------------------------------------------------------"
 
 while [ $num -le 10 ]
 do
-  sample
+  sample Jithu Jinnu
   num=$(($num+1))
 
 done
