@@ -1,1 +1,3 @@
-ECHO is on.
+#!/usr/bin/bash
+
+sudo yum install nginx -y
