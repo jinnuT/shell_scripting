@@ -6,7 +6,7 @@ catalogue:	## installing Catalogue Component
 	@bash catalogue.sh
 cart:		## installing Cart Component
 	@bash cart.sh
-user:		## installing User Component$Jinnu
+user:		## installing User Component
 	@bash user.sh
 shipping:	## installing Shipping Component
 	@bash shipping.sh
