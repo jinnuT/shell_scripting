@@ -15,7 +15,7 @@ echo second argument inside the main function = $2
 
 ##----Accessing variables declared inside the function and outside (main)-------------------------
 num=7
-sample
+sample Sobichan Chachan
 echo value of inside the sample function = $b
 
 ##-----LOOPS----------------------------------------------------------------------------------------
