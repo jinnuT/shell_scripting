@@ -4,14 +4,18 @@
 
 sample(){
   echo "Hello, I'm a sample function"
-  b=10
-  echo value of num=$num
+  echo first argument inside the sample function =$1
 }
-num=6
-sample
-echo value of b=$b
 
+##-----Argument passing inside and outside the function------------------------------------------
+echo first argument inside the main function =$1
 
+##----Accessing variables declared inside the function and outside (main)-------------------------
+#num=6
+#sample
+#echo value of b=$b
+
+##-----LOOPS----------------------------------------------------------------------------------------
 
 #echo b=$b
 #num=2
