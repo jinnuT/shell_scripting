@@ -6,23 +6,23 @@ rm -f $LOG
 echo -n -e "Installing Nginx...."
 yum install nginx -y >>$LOG
 if [ $? -eq 0 ]; then
-  echo "\t\t\t\e[32mdone..\e[0m"
+  echo -e "\e[32mdone..\e[0m"
 else
-  echo "\t\t\t\e[31mfail..\e[0m"
+  echo -e "\e[31mfail..\e[0m"
 fi
 echo -n -e "Enabling Nginx...."
 systemctl enable nginx >>$LOG
 if [ $? -eq 0 ]; then
-  echo "\t\t\t\e[32mdone..\e[0m"
+  echo -e "\e[32mdone..\e[0m"
 else
-  echo "\t\t\t\e[31mfail..\e[0m"
+  echo -e "\e[31mfail..\e[0m"
 fi
 echo -n -e "Starting Nginx...."
 systemctl start nginx >>$LOG
 if [ $? -eq 0 ]; then
-  echo "\t\t\t\e[32mdone..\e[0m"
+  echo -e "\e[32mdone..\e[0m"
 else
-  echo "\t\t\t\e[31mfail..\e[0m"
+  echo -e "\e[31mfail..\e[0m"
 fi
 #################################################systemctl status nginx >>$LOG
 
