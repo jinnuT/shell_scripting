@@ -5,10 +5,13 @@ rm -f $LOG
 
 echo -e "\e[32mInstalling Nginx....\t\e[0m"
 yum install nginx -y >>$LOG
+echo $?
 echo -e "\e[32mEnabling Nginx....\t\e[0m"
 systemctl enable nginx >>$LOG
+echo $?
 echo -e "\e[32mStarting Nginx....\t\e[0m"
 systemctl start nginx >>$LOG
+echo $?
 #################################################systemctl status nginx >>$LOG
 
 
