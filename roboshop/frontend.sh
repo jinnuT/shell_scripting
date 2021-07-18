@@ -3,7 +3,7 @@ LOG=/tmp/roboshop.log
 rm -f $LOG                    ##### Deleting exiting log already saved inside
 
 ###echo -e "Installing Nginx\t\t.....\t\e[32mdone\e[0m"
-yum install nginx -y &>>$LOG  ##### &> means attaching both output and error in one file
+yum install nnginx -y &>>$LOG  ##### &> means attaching both output and error in one file
 #echo $?                       ##### Exit command will display 0 if it is successful
 if [ $? -eq 0 ]; then
   echo -e "\e[32mnginx Successfully Installed\e[0m"
@@ -27,7 +27,7 @@ else
   echo -e "\e[31mnginx Starting Failed\e[0m"
 fi
 ###echo -e "Checking Status Nginx\t\t.....\t\e[32mdone\e[0m"
-systemctl sstatus nginx &>>$LOG
+systemctl status nginx &>>$LOG
 if [ $? -eq 0 ]; then
   echo -e "\e[32mnginx Status Checked succesfully\e[0m"
 else
