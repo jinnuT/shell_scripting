@@ -3,15 +3,27 @@
 LOG=/tmp/rbshop.log
 rm -f $LOG
 
-echo -e "\e[32mInstalling Nginx....\t\e[0m"
+echo -n -e "Installing Nginx...."
 yum install nginx -y >>$LOG
-echo $?
-echo -e "\e[32mEnabling Nginx....\t\e[0m"
+if [ $? -eq 0 ]; then
+  echo "\t\t\t\e[32mdone..\e[0m"
+else
+  echo "\t\t\t\e[31mfail..\e[0m"
+fi
+echo -n -e "Enabling Nginx...."
 systemctl enable nginx >>$LOG
-echo $?
-echo -e "\e[32mStarting Nginx....\t\e[0m"
+if [ $? -eq 0 ]; then
+  echo "\t\t\t\e[32mdone..\e[0m"
+else
+  echo "\t\t\t\e[31mfail..\e[0m"
+fi
+echo -n -e "Starting Nginx...."
 systemctl start nginx >>$LOG
-echo $?
+if [ $? -eq 0 ]; then
+  echo "\t\t\t\e[32mdone..\e[0m"
+else
+  echo "\t\t\t\e[31mfail..\e[0m"
+fi
 #################################################systemctl status nginx >>$LOG
 
 
