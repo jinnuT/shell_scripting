@@ -9,19 +9,21 @@ STAT_CHECK(){
   else
     echo -e "\e[31mfail..\e[0m"
     exit 1
-fi
-
+  fi
+}
+PRINT(){
+  echo -n -e "$1"
 }
 
-echo -n -e "Installing Nginx\t"
+PRINT "Installing Nginx\t"
 yum install nginx -y >>$LOG
 STAT_CHECK $?
 
-echo -n -e "Enabling Nginx\t\t"
+PRINT "Enabling Nginx\t\t"
 systemctl enable nginx >>$LOG
 STAT_CHECK $?
 
-echo -n -e "Starting Nginx\t\t"
+PRINT "Starting Nginx\t\t"
 systemctl start nginx >>$LOG
 STAT_CHECK $?
 #################################################systemctl status nginx >>$LOG
