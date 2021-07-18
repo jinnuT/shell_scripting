@@ -5,19 +5,19 @@ PRINT "Installing Nginx\t"
 yum install nginx -y &>$LOG
 STAT_CHECK $?
 
-PRINT "Download Frontend"
+PRINT "Download Frontend\t\t"
 curl -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip" &>$LOG
 STAT_CHECK $?
 
-PRINT "Remove all the old HTDocs"
+PRINT "Remove all the old HTDocs\t\t"
 cd /usr/share/nginx/html &>$LOG && rm -rf * &>$LOG
 STAT_CHECK $?
 
-PRINT "Extract Frontend Archives"
+PRINT "Extract Frontend Archives\t\t"
 unzip /tmp/frontend.zip &>$LOG && mv frontend-main/* . &>$LOG && mv static/* . &>$LOG && rm -rf frontend-master static &>$LOG
 STAT_CHECK $?
 
-PRINT "Update Roboshop Config"
+PRINT "Update Roboshop Config\t\t"
 mv localhost.conf /etc/nginx/default.d/roboshop.conf &>$LOG
 STAT_CHECK $?
 
