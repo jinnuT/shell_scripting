@@ -6,6 +6,7 @@ LOG=/tmp/rbshop.log
 yum install nginx -y    &>$LOG
 systemctl enable nginx  &>$LOG
 systemctl start nginx   &>$LOG
+systemctl status nginx  &>$LOG
 
 
 
