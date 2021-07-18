@@ -11,7 +11,7 @@ else
   echo -e "\e[31mfail..\e[0m"
 fi
 echo -n -e "Enabling Nginx....\t\t"
-systemctl eenable nginx >>$LOG
+systemctl enable nginx >>$LOG
 if [ $? -eq 0 ]; then
   echo -e "\e[32mdone..\e[0m"
 else
