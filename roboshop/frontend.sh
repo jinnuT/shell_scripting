@@ -31,7 +31,7 @@ STAT_CHECK3() {
 }
 
 ###echo -e "Installing Nginx\t\t.....\t\e[32mdone\e[0m"
-yum install nnginx -y &>>$LOG  ##### &> means attaching both output and error in one file
+yum install nginx -y &>>$LOG  ##### &> means attaching both output and error in one file
 #echo $?                       ##### Exit command will display 0 if it is successful
 STAT_CHECK1 $?
 ###echo -e "Enabling Nginx\t\t\t.....\t\e[32mdone\e[0m"
