@@ -22,6 +22,16 @@ STAT_CHECK2() {
 }
 
 STAT_CHECK3() {
+
+  if [ $1 -eq 0 ]; then
+    echo -e "\e[32mngnix Successfully Started\e[0m"
+  else
+    echo -e "\e[31mnginx Start Failed\e[0m"
+    exit 1
+  fi
+}
+
+STAT_CHECK4() {
   if [ $1 -eq 0 ]; then
     echo -e "\e[32mnginx Status Checked succesfully\e[0m"
   else
@@ -34,6 +44,7 @@ STAT_CHECK3() {
 yum install nginx -y &>>$LOG  ##### &> means attaching both output and error in one file
 #echo $?                       ##### Exit command will display 0 if it is successful
 STAT_CHECK1 $?
+
 ###echo -e "Enabling Nginx\t\t\t.....\t\e[32mdone\e[0m"
 systemctl enable nginx &>>$LOG
 STAT_CHECK2 $?
