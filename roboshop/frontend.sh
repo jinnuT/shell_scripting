@@ -29,7 +29,7 @@ fi
 ###echo -e "Checking Status Nginx\t\t.....\t\e[32mdone\e[0m"
 systemctl status nginx &>>$LOG
 if [ $? -eq 0 ]; then
-  echo -e "\e[32mnginx Status Checking\e[0m"
+  echo -e "\e[32mnginx Status Checked succesfully\e[0m"
 else
   echo -e "\e[32mnginx Status Checking Failed\e[0m"
 fi
