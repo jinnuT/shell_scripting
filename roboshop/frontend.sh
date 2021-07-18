@@ -4,9 +4,9 @@ rm -f $LOG                    ##### Deleting exiting log already saved inside
 
 STAT_CHECK1() {
   if [ $1 -eq 0 ]; then
-    echo -e "\e[32mnginx Successfully Installed\e[0m"
+    echo -n -e "\e[32mnginx Successfully Installed\e[0m"
   else
-    echo -e "\e[31mnginx Installation Failed\e[0m"
+    echo -n -e "\e[31mnginx Installation Failed\e[0m"
     exit 1
   fi
 }
@@ -14,9 +14,9 @@ STAT_CHECK1() {
 STAT_CHECK2() {
 
   if [ $1 -eq 0 ]; then
-    echo -e "\e[32mngnix Successfully Enabled\e[0m"
+    echo -n -e "\e[32mngnix Successfully Enabled\e[0m"
   else
-    echo -e "\e[31mnginx Enabling Failed\e[0m"
+    echo -n -e "\e[31mnginx Enabling Failed\e[0m"
     exit 1
   fi
 }
