@@ -20,6 +20,10 @@ STAT_CHECK $?
 
 
 PRINT "Extract Downloaded code"
-cd /home/roboshop && unzip /tmp/catalogue.zip &>>$LOG && mv catalogue-main catalogue && cd /home/roboshop/catalogue && npm install
+cd /home/roboshop && unzip /tmp/catalogue.zip &>>$LOG && rm -rf catalogue && mv catalogue-main catalogue &>>$LOG
+STAT_CHECK $?
+
+PRINT "Installing Nodejs Dependancies"
+cd /home/roboshop/catalogue && npm install --unsafe-perm &>>$LOG
 STAT_CHECK $?
 
