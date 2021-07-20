@@ -14,11 +14,12 @@ STAT_CHECK(){
     echo -e "\e[32mdone..\e[0m"
   else
     echo -e "\e[31mfail..\e[0m"
+    echo -e "\e[33mCheck the log file for more details, log file -$LOG\e[0m"
     exit 1
   fi
 }
 PRINT(){
-  echo -n -e "$1"
+  echo -n -e "$1\t\t"
 }
 
 
