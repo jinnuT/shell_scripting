@@ -19,7 +19,7 @@ curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/cat
 STAT_CHECK $?
 
 
-PRINT "Extract Downloaded code"
+PRINT "Extract Downloaded code\t"
 cd /home/roboshop && unzip /tmp/catalogue.zip &>>$LOG && rm -rf catalogue && mv catalogue-main catalogue &>>$LOG
 STAT_CHECK $?
 
