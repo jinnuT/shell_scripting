@@ -15,15 +15,20 @@ yum install -y mongodb-org &>$LOG
 STAT_CHECK $?
 
 #Update Liste IP address from 127.0.0.1 to 0.0.0.0 in config file
-#PRINT "Update Mongodb Listen Address\t"
+PRINT "Update Mongodb Listen Address\t"
+sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
+STAT_CHECK $?
 #Config file: /etc/mongod.conf
 
+PRINT "Start Mongodb Service \t\t"
+systemctl enable mongod &>$LOG && systemctl start mongod &>$LOG
+STAT_CHECK $?
 
+PRINT "Download MOngodb Schema\t"
+curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip" &>$LOG
+STAT_CHECK $?
 
-#systemctl enable mongod
-# systemctl start mongod
+PRINT "Load Schema\t\t"
+cd /tmp && unzip -o mongodb.zip &>$LOG && cd mongodb-main && mongo < catalogue.js &>$LOG && mongo < users.js &>$LOG
+STAT_CHECK $?
 
-
-#then restart the service
-
-# systemctl restart mongod
