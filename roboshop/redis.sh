@@ -17,5 +17,5 @@ STAT_CHECK $?
 #Update the BindIP from 127.0.0.1 to 0.0.0.0 in config file /etc/redis.conf & /etc/redis/redis.conf
 
 PRINT "Start Redis Service"
-systemctl enable redis && systemctl start redis &>>$LOG
+systemctl enable redis && systemctl restart redis &>>$LOG
 STAT_CHECK $?
