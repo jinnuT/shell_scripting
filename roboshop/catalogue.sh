@@ -9,7 +9,7 @@ STAT_CHECK $?
 PRINT "Add Roboshop Application User "
 useradd roboshop &>>$LOG
 STAT_CHECK $?
-#catalo
+#catalologu
 #$ curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
 #$ cd /home/roboshop
 #$ unzip /tmp/catalogue.zip
