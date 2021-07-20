@@ -23,7 +23,6 @@ STAT_CHECK $?
 
 PRINT "Update Roboshop Config\t\t"
 sed -i -e "/catalogue/ s/catalogue/catalogue.roboshop.internal/"
-mv localhost.conf /etc/nginx/default.d/roboshop.conf &>$LOG
 STAT_CHECK $?
 
 PRINT "Enabling Nginx\t\t\t"
