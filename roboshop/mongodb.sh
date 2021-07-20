@@ -1,5 +1,4 @@
 #!/usr/bin/bash
-LOG=/tmp/roboshop.log
 source common.sh
 
 PRINT "Setting up Repository\t"
