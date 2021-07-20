@@ -3,7 +3,6 @@ LOG=/tmp/roboshop.log
 source common.sh
 
 PRINT "Setting up Repository\t"
-Setup MongoDB repos.
 echo '[mongodb-org-4.2]
 name=MongoDB Repository
 baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.2/x86_64/
