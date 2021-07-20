@@ -22,7 +22,7 @@ mv localhost.conf /etc/nginx/default.d/roboshop.conf &>$LOG
 STAT_CHECK $?
 
 PRINT "Update Roboshop Config\t\t"
-sed -i -e "/catalogue/ s/catalogue/catalogue.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
+sed -i -e "/catalogue/ s/localhost/catalogue.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
 STAT_CHECK $?
 
 PRINT "Enabling Nginx\t\t\t"
@@ -35,11 +35,3 @@ STAT_CHECK $?
 
 
 
-#################################################systemctl status nginx >>$LOG
-
-
-
-
-## 1) Cleaning up all the output and error message showing in the terminal
-##    -- Output from command should not be displayed on the screen
-##    -- use the redirect (> or &> or 1> or 2>) the log message to a desired folder
