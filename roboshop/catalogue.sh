@@ -2,11 +2,11 @@
 
 source common.sh
 
-PRINT "Install nodejs\t\t\t"
+PRINT "Install nodejs\t\t"
 yum install nodejs make gcc-c++ -y &>$LOG
 STAT_CHECK $?
 
-PRINT "Add Roboshop Application User \t"
+PRINT "Add Roboshop Application User "
 useradd roboshop &>$LOG
 STAT_CHECK $?
 #catalo
