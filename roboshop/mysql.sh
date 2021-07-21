@@ -21,7 +21,10 @@ STAT_CHECK $?
 #Now a default root password will be generated and given in the log file.
 PRINT "Reset MySQL Root Password"
 DEFAULT_PASSWORD=$(grep 'A temporary password' /var/log/mysqld.log | awk '{print $(NF-0)}')
-echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1';" | mysql --connect-expired-password -uroot -p${DEFAULT_PASSWORD} &>>$LOG
+echo "show mydatabases;" | mysql -uroot -pRoboShop@1
+if [ $? -ne 0 ]; then
+  echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1';" | mysql --connect-expired-password -uroot -p${DEFAULT_PASSWORD} &>>$LOG
+fi
 STAT_CHECK $?
 # grep temp /var/log/mysqld.log
 
