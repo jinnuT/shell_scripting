@@ -26,5 +26,17 @@ if [ $? -ne 0 ]; then
   echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1';" | mysql --connect-expired-password -uroot -p${DEFAULT_PASSWORD} &>>$LOG
 fi
 STAT_CHECK $?
-# grep temp /var/log/mysqld.log
+
+PRINT "Uninstall MySQL Password Policy"
+echo "uninstall plugin validate_password;" | mysql -uroot -pRoboShop@1 &>>$LOG
+STAT_CHECK $?
+
+
+PRINT "Download Schema"
+curl -s -L -o /tmp/mysql.zip "https://github.com/roboshop-devops-project/mysql/archive/main.zip" &>>$LOG
+STAT_CHECK $?
+
+PRINT "Load Schema"
+cd /tmp && unzip -o mysql.zip &>>$LOG && cd mysql-main && mysql -uroot -pRoboShop@1 <shipping.sql &>>$LOG
+STAT_CHECK $?
 
