@@ -56,7 +56,7 @@ NODEJS() {
   STAT_CHECK $?
 
   PRINT "Update systemD file\t"
-  sed -i -e "s/MONGO_DNSNAME/mongodb.roboshop.internal/" -e "/REDIS_ENDPOINT/redis.roboshop.internal/" -e "/MONGO_ENDPOINT/mongodb.roboshop.internal/" /home/roboshop/${COMPONENT}/systemd.service && mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/user.service
+  sed -i -e "s/MONGO_DNSNAME/mongodb.roboshop.internal/" -e "s/REDIS_ENDPOINT/redis.roboshop.internal/" -e "s/MONGO_ENDPOINT/mongodb.roboshop.internal/" /home/roboshop/${COMPONENT}/systemd.service && mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/user.service
   STAT_CHECK $?
 
   PRINT "Start ${COMPONENT} Service\t"
