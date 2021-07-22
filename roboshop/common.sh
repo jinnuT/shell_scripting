@@ -122,9 +122,13 @@ PYTHON3(){
 
   PERM_FIX
 
-  # Update the roboshop user id and group id in payment.ini file.
-  #  x-x-x-x-x-x-x-x
-  #SETUP_SYSTEMD
+  PRINT "Update Service Configuration"
+  UUID=$(id -u roboshop)
+  GGID=$(id -g roboshop)
+  sed -e "/gid/ c gid = ${GGID}" -e "/uid/ c uid = ${UUID}"  payment.ini  &>>$LOG
+  STAT_CHECK $?
+
+  SETUP_SYSTEMD
 }
 
 
