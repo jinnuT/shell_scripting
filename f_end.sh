@@ -7,10 +7,10 @@ PRINT() {
 
 STAT_CHECK(){
   if [ $? -eq 0 ]; then
-    echo "\e[32mDone..\e[0m"
+    echo -e "\e[32mDone..\e[0m"
   else
-    echo "\e[31mFail..\e[0m"
-    echo "\e[31m Check the log file for more details, Log File - $LOG\e[0m"
+    echo -e  "\e[31mFail..\e[0m"
+    echo -e  "\e[31m Check the log file for more details, Log File - $LOG\e[0m"
   fi
 }
 
