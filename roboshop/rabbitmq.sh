@@ -9,12 +9,20 @@ if [ $? -ne 0 ]; then
 fi
 STAT_CHECK $?
 
-# curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash
-# yum install rabbitmq-server -y
-# systemctl enable rabbitmq-server
-# systemctl start rabbitmq-server
+PRINT "Set-up RabbitMQ repos"
+curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash  &>>$LOG
+STAT_CHECK $?
 
+PRINT "Install RabbitMQ Server"
+yum install rabbitmq-server -y &>>$LOG
+STAT_CHECK $?
 
-# rabbitmqctl add_user roboshop roboshop123
+PRINT "Start RabbitMQ Service"
+systemctl enable rabbitmq-server &>>$LOG && systemctl start rabbitmq-server &>>$LOG
+STAT_CHECK $?
+
+PRINT "Create App User in RabbitMQ"
+rabbitmqctl add_user roboshop roboshop123
+STAT_CHECK $?
 # rabbitmqctl set_user_tags roboshop administrator
 # rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
