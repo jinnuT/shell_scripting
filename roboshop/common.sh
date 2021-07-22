@@ -2,7 +2,7 @@
 
 USER_ID=$(id -u)
 if [ $USER_ID -ne 0 ]; then
-  echo -e "\e[31mYou should be a root user or sudo user to coninue with the script\e[0m"
+  echo -e "\e[31mYou should be a root user or sudo user to continue with the script\e[0m"
   exit 2
 fi
 
@@ -52,7 +52,7 @@ PERM_FIX(){
 SETUP_SYSTEMD(){
 
   PRINT "Update systemD file\t"
-  sed -i -e "s/MONGO_DNSNAME/mongodb.roboshop.internal/" -e "s/REDIS_ENDPOINT/redis.roboshop.internal/" -e "s/MONGO_ENDPOINT/mongodb.roboshop.internal/" -e "s/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/" -e "s/CARTENDPOINT/cart.roboshop.internal/" -e "s/DBHOST/mysql.roboshop.internal/" -e "s/CARTHOST/cart.roboshop.internal/" -e "s/USERHOST/user.roboshop.internal/" -e "/AMQPHOST/rabbitmq.roboshop.internal/" /home/roboshop/${COMPONENT}/systemd.service && mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
+  sed -i -e "s/MONGO_DNSNAME/mongodb.roboshop.internal/" -e "s/REDIS_ENDPOINT/redis.roboshop.internal/" -e "s/MONGO_ENDPOINT/mongodb.roboshop.internal/" -e "s/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/" -e "s/CARTENDPOINT/cart.roboshop.internal/" -e "s/DBHOST/mysql.roboshop.internal/" -e "s/CARTHOST/cart.roboshop.internal/" -e "s/USERHOST/user.roboshop.internal/" -e "s/AMQPHOST/rabbitmq.roboshop.internal/" /home/roboshop/${COMPONENT}/systemd.service && mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
   STAT_CHECK $?
 
   PRINT "Start ${COMPONENT} Service\t"
@@ -119,8 +119,6 @@ PYTHON3(){
   PRINT "Install Python Dependencies"
   cd /home/roboshop/${COMPONENT}  &&  pip3 install -r requirements.txt &>>$LOG
   STAT_CHECK $?
-
-
 
   PRINT "Update Service Configuration"
   userID=$(id -u roboshop)
