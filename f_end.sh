@@ -22,7 +22,7 @@ while [ $p -ne 0 ]; do
 done
 STAT_CHECK $?
 var=$(seq 1 100)
-txt=$Jinnu
+txt=$(Jinnu)
 PRINT "FOR LOOP"
 for txt in $var ; do
   PRINT $txt
