@@ -123,9 +123,9 @@ PYTHON3(){
   PERM_FIX
 
   PRINT "Update Service Configuration"
-  UUID=$(id -u roboshop)
-  GGID=$(id -g roboshop)
-  sed -e "/gid/ c gid = ${GGID}" -e "/uid/ c uid = ${UUID}"  payment.ini  &>>$LOG
+  userID=$(id -u roboshop)
+  groupID=$(id -g roboshop)
+  sed -i -e "/gid/ c gid = ${groupID}" -e "/uid/ c uid = ${userID}"  payment.ini  &>>$LOG
   STAT_CHECK $?
 
   SETUP_SYSTEMD
