@@ -21,8 +21,8 @@ while [ $p -ne 0 ]; do
   p=$(($p-1))
 done
 STAT_CHECK $?
-var=$(seq 1 100)
-txt=$(echo Jinnu)
+var=$(seq 1 10)
+txt=5555
 PRINT "FOR LOOP"
 for txt in $var ; do
   PRINT $txt
