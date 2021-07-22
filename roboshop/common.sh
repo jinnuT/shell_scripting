@@ -56,7 +56,7 @@ SETUP_SYSTEMD(){
   STAT_CHECK $?
 
   PRINT "Start ${COMPONENT} Service\t"
-  systemctl daemon-reload &>>$LOG && systemctl restart ${COMPONENT} &>>$LOG && systemctl enable ${COMPONENT} &>>$LOG
+  systemctl daemon-reload &>>$LOG && systemctl start ${COMPONENT} &>>$LOG && systemctl enable ${COMPONENT} &>>$LOG
   STAT_CHECK $?
 }
 #-------------------------------------------------------------------------------------------------------------------------#
@@ -68,7 +68,6 @@ NODEJS() {
   yum install nodejs make gcc-c++ -y &>>$LOG
   STAT_CHECK $?
 
-
   ADD_APPLICATION_USER
   DOWNLOAD_APP_CODE
 
@@ -77,7 +76,6 @@ NODEJS() {
   STAT_CHECK $?
 
   PERM_FIX
-  
   SETUP_SYSTEMD
 
 }
@@ -114,7 +112,6 @@ PYTHON3(){
 
   ADD_APPLICATION_USER
   DOWNLOAD_APP_CODE
-  
 
   PRINT "Install Python Dependencies"
   cd /home/roboshop/${COMPONENT}  &&  pip3 install -r requirements.txt &>>$LOG
