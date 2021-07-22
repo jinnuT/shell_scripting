@@ -21,3 +21,8 @@ while [ $p -ne 0 ]; do
   p=$(($p-1))
 done
 STAT_CHECK $?
+
+PRINT "FOR LOOP"
+for fruits in apple orange graps cantaloupe ; do
+  PRINT $fruits
+done
