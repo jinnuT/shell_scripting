@@ -26,3 +26,4 @@ PRINT "FOR LOOP"
 for fruits in apple orange graps cantaloupe ; do
   PRINT $fruits
 done
+STAT_CHECK $?
