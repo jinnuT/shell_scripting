@@ -21,9 +21,10 @@ while [ $p -ne 0 ]; do
   p=$(($p-1))
 done
 STAT_CHECK $?
-
+var=$(seq 1 100)
+txt=Jinnu
 PRINT "FOR LOOP"
-for fruits in apple orange graps cantaloupe ; do
-  PRINT $fruits
+for txt in $var ; do
+  PRINT txt
 done
 STAT_CHECK $?
