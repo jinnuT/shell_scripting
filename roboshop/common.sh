@@ -108,7 +108,7 @@ JAVA() {
 #--------------------------------------- PYTHON3 FUNCTION ----------------------------------------------------------------#
 #-------------------------------------------------------------------------------------------------------------------------#
 PYTHON3(){
-  PRINT "Install Python 3\t"
+  PRINT "Install Python3\t"
   yum install python36 gcc python3-devel -y &>>$LOG
   STAT_CHECK $?
 
@@ -117,17 +117,18 @@ PYTHON3(){
   
 
   PRINT "Install Python Dependencies"
-  cd /home/roboshop/${COMPONENT} &>>$LOG &&  pip3 install -r requirements.txt &>>$LOG
+  cd /home/roboshop/${COMPONENT}  &&  pip3 install -r requirements.txt &>>$LOG
   STAT_CHECK $?
 
-  PERM_FIX
+
 
   PRINT "Update Service Configuration"
   userID=$(id -u roboshop)
   groupID=$(id -g roboshop)
-  sed -i -e "/gid/ c gid = ${groupID}" -e "/uid/ c uid = ${userID}"  payment.ini  &>>$LOG
+  sed -i  -e "/uid/ c uid = ${userID}" -e "/gid/ c gid = ${groupID}"  payment.ini  &>>$LOG
   STAT_CHECK $?
 
+  PERM_FIX
   SETUP_SYSTEMD
 }
 
