@@ -25,6 +25,6 @@ var=$(seq 1 100)
 txt=Jinnu
 PRINT "FOR LOOP"
 for txt in $var ; do
-  PRINT txt
+  PRINT $txt
 done
 STAT_CHECK $?
