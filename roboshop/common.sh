@@ -97,7 +97,7 @@ JAVA() {
   ADD_APPLICATION_USER
   DOWNLOAD_APP_CODE
 
-  PRINT "Compile the Code\t\t"
+  PRINT "Compile the Code\t"
   cd /home/roboshop/${COMPONENT} && mvn clean package &>>$LOG && mv target/shipping-1.0.jar shipping.jar &>>$LOG
   STAT_CHECK $?
 
